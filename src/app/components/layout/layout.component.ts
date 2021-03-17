@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterState } from '@angular/router';
 
-import { AngularDB } from '../../interfaces/angular-db';
+import { DB } from '../../interfaces/db';
 
-import { AngularDbService } from '../../services/angular-db.service'
+import { DbService } from '../../services/db.service'
 
 @Component({
   selector: 'app-layout',
@@ -14,41 +14,43 @@ import { AngularDbService } from '../../services/angular-db.service'
 export class LayoutComponent implements OnInit {
 
   private state: RouterState;
-  private currentUrl: string = '';
+  public currentUrl: string = 'YO SOY TU PADRE';
 
-  public title: any;
-  public data: any;
-/*
-  data: AngularDB;
-  title: AngularDB;
-*/
+  public title: string = '';
+  public db: DB[] = [];
+
+  currentItem: string = '';
+
 
   constructor(
     private router: Router,
-    public angularDbService: AngularDbService
-    ) {
+    public dbService: DbService
+    )
+  {
     this.state = router.routerState;
     this.currentUrl = this.state.snapshot.url;
-    console.log('state',this.currentUrl);
+    //console.log('state',this.currentUrl);
   }
 
   ngOnInit(): void {
 
     switch (this.currentUrl) {
       case '/angular':
-        this.data = 'ANGULAR';
+        this.title = 'Angular';
+        this.db = this.dbService.getAngularDB();
         break;
       case '/git':
-        this.data = 'GIT';
+        this.title = 'Guía rápida para Git';
+        this.db = this.dbService.getGitDB();
         break;
       default:
-        this.data = 'HOME';
+        this.title = 'Welcome';
+        this.db = this.dbService.getHomeDB();
         break;
     }
 
-    this.data = this.angularDbService.angularDB;
-    //console.log(this.data);
-    //this.title = this.data[0].title;
+    console.log('QUE HAY EN DATA', this.db);
+
   }
 
 }

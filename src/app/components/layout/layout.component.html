@@ -1,6 +1,14 @@
-<p>layouts start</p>
-<p>{{ title }}</p>
-<router-outlet></router-outlet>
+<!--p>layouts start</p-->
 
-{{ data }}
-<p>layouts end</p>
+<h2>{{ title }}</h2>
+<!--p>DATA -> {{ db }}</p-->
+<ul>
+  <li *ngFor="let data of db">
+    <p>{{ data.title }}</p>
+    <p>{{ data.text }}</p>
+  </li>
+</ul>
+
+<!--router-outlet [item]="currentItem"></router-outlet-->
+<router-outlet></router-outlet>
+<!--p>layouts end</p-->

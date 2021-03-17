@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav-right',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SideNavRightComponent implements OnInit {
+
+  //@Input() item: string;
+  item: string = 'HIJO';
 
   constructor() {}
 

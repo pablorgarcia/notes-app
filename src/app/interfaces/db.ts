@@ -1,4 +1,4 @@
-export interface AngularDB {
+export interface DB {
   title: string;
   text: object;
 }

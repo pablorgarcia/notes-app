@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LayoutRoutingModule } from './layout–routing.module';
+import { DbService } from '../../services/db.service'; // NO se está usando
 
-import { LayoutComponent } from './layout.component';
+import { SideNavRightComponent } from '../side-nav-right/side-nav-right.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SideNavRightComponent
+  ],
   imports: [
-    LayoutRoutingModule,
     CommonModule,
   ],
-  providers: []
+  providers: [DbService] // NO se está usando
 })
 
 export class LayoutModule {}

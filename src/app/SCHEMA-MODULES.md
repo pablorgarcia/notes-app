@@ -1,6 +1,6 @@
 -App
-> header
-> footer
+-App.header 
+-App.footer
 > page-not-found
 > Layout
 - router-outlet
