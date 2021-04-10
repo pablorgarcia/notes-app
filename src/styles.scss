@@ -13,11 +13,12 @@ header.markdown-body {
   display: flex;
   box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   flex-direction: row;
   align-items: center;
   white-space: wrap;
 
-  padding: 0;
+  padding: 0 8px;
   margin: 0;
 }
 
@@ -25,12 +26,19 @@ header.markdown-body h1 {
   padding: 0;
   margin: 0;
   border-bottom: none;
+  flex-grow: 1;
+  text-align: center;
 }
 
-header.markdown-body ul {
+header.markdown-body nav {
+  flex-grow: 2;
+  flex-wrap: wrap;
+}
+
+header.markdown-body nav ul {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   list-style-position: inside;
   padding: 0;
   margin: 0;
@@ -43,11 +51,11 @@ header.markdown-body ul {
   list-style: none;
 }
 
-header.markdown-body ul li {
+header.markdown-body nav ul li {
   margin: 0 0.5em;
 }
 
-header.markdown-body ul li a {
+header.markdown-body nav ul li a {
   font-size: 0.6em;
 }
 
@@ -1074,9 +1082,9 @@ code {
 .markdown-body {
   box-sizing: border-box;
   min-width: 200px;
-  max-width: 980px;
+  max-width: 890px;
   margin: 0 auto;
-  padding: 6em 45px 45px 45px;
+  padding: 6em 0 3em;
 }
 
 @media (max-width: 767px) {
